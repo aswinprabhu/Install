@@ -125,26 +125,34 @@ Password : your password
 > For more info related to docker and docker-compose commands, please go through the docker documentation. 
 
 * Service : web
-> **dockerfile** - Docker file name to be used for frontend
-> **PF_URL** - URL of platform (from platform service). ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```
-> **ports** - Port on which port 80 of container is mapped to host port. <host_port>:<container_port>
+
+|Field | Field description|
+|------|------------------|
+| dockerfile | Docker file name to be used for frontend |
+| PF_URL | URL of platform (from platform service). ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+| ports |  Port on which port 80 of container is mapped to host port <host_port>:<container_port>|
 	
 
 * Service : platform
-> **dockerfile** - Docker file name to be used for platform
-> **CM_URL** - URL of web
-```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>```
-> **EXECUTOR_URL** - URL of executor service. Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins
-> **CM_DASH_URL** : URL of web service with dashboard ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>/dashboard```
-> **CM_API_URL** : URL of platform api ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>/apitest2.php```
-> **ports** - Port on which port 80 of container is mapped to host port. <host_port>:<container_port>
-> **volumes** - Volumes to be mapped inside container.
+
+|Field | Field description|
+|------|------------------|
+|dockerfile|Docker file name to be used for platform|
+|CM_URL| URL of web ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>```|
+|EXECUTOR_URL|URL of executor service. ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins```|
+|CM_DASH_URL|  URL of web service with dashboard ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>/dashboard```|
+|CM_API_URL|  URL of platform api ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>/apitest2.php```|
+|ports|  Port on which port 80 of container is mapped to host port. <host_port>:<container_port>|
+|volumes|  Volumes to be mapped inside container|
 
 * Service : executor
-> **dockerfile** - Docker file name to be used for frontend
-> **EXECUTOR_URL** - URL of executor service ``` Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins ```
-> **PF_URL** - URL of platform service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```
-> **ports** - Port on which port 8080 of container is mapped to host port ``` <host_port>:<container_port>```
+
+|Field | Field description |
+|------|-------------------|
+|dockerfile|  Docker file name to be used for frontend |
+|EXECUTOR_URL|  URL of executor service ``` Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins ```|
+|PF_URL|  URL of platform service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+|ports|  Port on which port 8080 of container is mapped to host port ``` <host_port>:<container_port>```|
 
 #### Commands for starting / stopping container services
 
