@@ -119,7 +119,10 @@ Email : your e-mail id
 Password : your password
 ```
 
-#### Cloudmunch Services Architecture
+#### CloudMunch Services Architecture
+
+CloudMunch installs three distinct services as part of the installation. A UI service, A Core service and an Executor services, and they are structured as below.
+
 ![alt text](images/architecture.png "Cloudmunch Services Architecture")
 
 
@@ -128,28 +131,28 @@ Password : your password
 
 > For more info related to docker and docker-compose commands, please go through the docker documentation. 
 
-* Service : **UI** Service (Recommended to edge cache to handle load on this)
+##### Service : **UI** Service (Recommended to edge cache to handle load on this)
 
 |Field | Field description|
 |------|------------------|
 | dockerfile | Docker file name to be used for frontend |
-| PLATFORM_URL | URL of platform (from platform service). ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+| PLATFORM_URL | URL of platform (from platform service) ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
 | ports |  Port on which port 80 of container is mapped to host port <host_port>:<container_port>|
 	
 
-* Service : **CORE** Service (Recommended to scale when online load is high)
+##### Service : **CORE** Service (Recommended to scale when online load is high)
 
 |Field | Field description|
 |------|------------------|
 |dockerfile|Docker file name to be used for platform|
 |CM_URL| URL of web ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>```|
-|EXECUTOR_URL|URL of executor service. ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins```|
+|EXECUTOR_URL|URL of executor service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins```|
 |CM_DASH_URL|  URL of web service with dashboard ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>/dashboard```|
 |CM_API_URL|  URL of platform api ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>/apitest2.php```|
 |ports|  Port on which port 80 of container is mapped to host port. <host_port>:<container_port>|
 |volumes|  Volumes to be mapped inside container|
 
-* Service : **EXECUTOR** Service (Recommended to scale as execution load increases)
+##### Service : **EXECUTOR** Service (Recommended to scale as execution load increases)
 
 |Field | Field description |
 |------|-------------------|
