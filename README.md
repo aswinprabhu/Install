@@ -131,7 +131,7 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 
 > For more info related to docker and docker-compose commands, please go through the docker documentation. 
 
-##### Service : **UI** Service (Recommended to edge cache to handle load on this)
+##### **UI** Service (Recommended to edge cache to handle load on this)
 
 |Field | Field description|
 |------|------------------|
@@ -140,7 +140,7 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 | ports |  Port on which port 80 of container is mapped to host port <host_port>:<container_port>|
 	
 
-##### Service : **CORE** Service (Recommended to scale when online load is high)
+##### **CORE** Service (Recommended to scale when online load is high)
 
 |Field | Field description|
 |------|------------------|
@@ -152,7 +152,7 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 |ports|  Port on which port 80 of container is mapped to host port. <host_port>:<container_port>|
 |volumes|  Volumes to be mapped inside container|
 
-##### Service : **EXECUTOR** Service (Recommended to scale as execution load increases)
+##### **EXECUTOR** Service (Recommended to scale as execution load increases)
 
 |Field | Field description |
 |------|-------------------|
