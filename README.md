@@ -59,7 +59,7 @@ git checkout
 ```
 #### Create volumes to share container data and logs
 
-* Run the following commands platform volume
+* Run the following commands core volume
 
 > Platform runs the core api services 
 
@@ -136,7 +136,7 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 |Field | Field description|
 |------|------------------|
 | dockerfile | Docker file name to be used for frontend |
-| PLATFORM_URL | URL of platform (from platform service) ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+| CORE_URL | URL of core service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which core service is exposed>```|
 | ports |  Port on which port 80 of container is mapped to host port <host_port>:<container_port>|
 	
 
@@ -144,11 +144,11 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 
 |Field | Field description|
 |------|------------------|
-|dockerfile|Docker file name to be used for platform|
+|dockerfile|Docker file name to be used for core service|
 |CM_URL| URL of web ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>```|
 |EXECUTOR_URL|URL of executor service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins```|
 |CM_DASH_URL|  URL of web service with dashboard ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which web service is exposed>/dashboard```|
-|CM_API_URL|  URL of platform api ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>/apitest2.php```|
+|CM_API_URL|  URL of core api ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which core service is exposed>/apitest2.php```|
 |ports|  Port on which port 80 of container is mapped to host port. <host_port>:<container_port>|
 |volumes|  Volumes to be mapped inside container|
 
@@ -158,7 +158,7 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 |------|-------------------|
 |dockerfile|  Docker file name to be used for frontend |
 |EXECUTOR_URL|  URL of executor service ``` Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins ```|
-|PLATFORM_URL|  URL of platform service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+|CORE_URL|  URL of core service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which core service is exposed>```|
 |ports|  Port on which port 8080 of container is mapped to host port ``` <host_port>:<container_port>```|
 
 #### Commands for starting / stopping container services

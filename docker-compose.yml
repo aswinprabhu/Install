@@ -1,20 +1,20 @@
 version: '2'
 services:
-  web:
+  ui:
     build:
       context: .
       dockerfile: DockerfileUI
       args:
-        PLATFORM_URL: "http://192.168.1.4:8000"
+        CORE_URL: "http://192.168.1.4:8000"
     ports:
       - "80:80"
     restart: always
     depends_on:
-      - platform
+      - core
       - executor
     links:
-      - platform
-  platform:
+      - core
+  core:
     build:
       context: .
       dockerfile: DockerfilePF
@@ -38,7 +38,7 @@ services:
       dockerfile: DockerfileHPI
       args:
         EXECUTOR_URL: "http://192.168.1.4:8080/jenkins"
-        PLATFORM_URL: "http://192.168.1.4:8000/apitest2.php"
+        CORE_URL: "http://192.168.1.4:8000/apitest2.php"
     ports:
       - "8080:8080"
     restart: always
