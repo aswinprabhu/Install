@@ -124,7 +124,7 @@ Password : your password
 
 > For more info related to docker and docker-compose commands, please go through the docker documentation. 
 
-* Service : **web**
+* Service : **UI** Service (Recommended to edge cache to handle load on this)
 
 |Field | Field description|
 |------|------------------|
@@ -133,7 +133,7 @@ Password : your password
 | ports |  Port on which port 80 of container is mapped to host port <host_port>:<container_port>|
 	
 
-* Service : **platform**
+* Service : **CORE** Service (Recommended to scale when online load is high)
 
 |Field | Field description|
 |------|------------------|
@@ -145,7 +145,7 @@ Password : your password
 |ports|  Port on which port 80 of container is mapped to host port. <host_port>:<container_port>|
 |volumes|  Volumes to be mapped inside container|
 
-* Service : **executor**
+* Service : **EXECUTOR** Service (Recommended to scale as execution load increases)
 
 |Field | Field description |
 |------|-------------------|
