@@ -133,7 +133,7 @@ Password : your password
 |Field | Field description|
 |------|------------------|
 | dockerfile | Docker file name to be used for frontend |
-| PF_URL | URL of platform (from platform service). ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+| PLATFORM_URL | URL of platform (from platform service). ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
 | ports |  Port on which port 80 of container is mapped to host port <host_port>:<container_port>|
 	
 
@@ -155,7 +155,7 @@ Password : your password
 |------|-------------------|
 |dockerfile|  Docker file name to be used for frontend |
 |EXECUTOR_URL|  URL of executor service ``` Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>/jenkins ```|
-|PF_URL|  URL of platform service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
+|PLATFORM_URL|  URL of platform service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which platform service is exposed>```|
 |ports|  Port on which port 8080 of container is mapped to host port ``` <host_port>:<container_port>```|
 
 #### Commands for starting / stopping container services
