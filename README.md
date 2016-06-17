@@ -119,6 +119,10 @@ Email : your e-mail id
 Password : your password
 ```
 
+#### Cloudmunch Services Architecture
+![alt text](images/architecture.png "Cloudmunch Services Architecture")
+
+
 #### Update Docker Compose File
 * Values are already set in the docker and docker-compose files but can be updated if different settings are required
 
