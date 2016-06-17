@@ -1,0 +1,54 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: DockerfileUI
+      args:
+        PLATFORM_URL: "http://192.168.1.4:8000"
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - platform
+      - executor
+    links:
+      - platform
+  platform:
+    build:
+      context: .
+      dockerfile: DockerfilePF
+      args:
+        CM_URL: "http://192.168.1.4"
+        EXECUTOR_URL: "http://192.168.1.4:8080/jenkins"
+        CM_DASH_URL: "http://192.168.1.4/dashboard"
+        CM_API_URL: "http://192.168.1.4:8000/apitest2.php"
+    ports:
+      - "8000:80"
+    restart: always
+    volumes:
+      - platform:/var/cloudbox/platform
+      - domain:/var/cloudbox/domain
+      - logs:/var/log
+    links:
+      - executor
+  executor:
+    build:
+      context: .
+      dockerfile: DockerfileHPI
+      args:
+        EXECUTOR_URL: "http://192.168.1.4:8080/jenkins"
+        PLATFORM_URL: "http://192.168.1.4:8000/apitest2.php"
+    ports:
+      - "8080:8080"
+    restart: always
+    volumes:
+      - domain:/var/cloudbox/domain
+      - logs:/var/log
+volumes:
+  platform:
+    external: true
+  domain:
+    external: true
+  logs:
+    external: true

@@ -1,0 +1,9 @@
+FROM cloudmunch1/ui-dl:1
+MAINTAINER Cloudmunch
+ARG PLATFORM_URL
+WORKDIR /var/www/html/cloudbox/dashboard/javascript/app/common
+RUN echo {\"SERVER\":\"$PLATFORM_URL\"} > serverConfig.json
+RUN ["chown", "-R", "cloudmunch:cloudmunch", "/var/www/html/"]
+EXPOSE 80
+ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
+

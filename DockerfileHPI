@@ -1,0 +1,13 @@
+FROM cloudmunch1/hpi-dl:1
+MAINTAINER Cloudmunch
+ARG PLATFORM_URL
+ARG EXECUTOR_URL
+WORKDIR /opt/jenkins
+RUN xmlstarlet ed --inplace -u cmUrl -v $PLATFORM_URL com.cloudmunch.plugins.CloudmunchWrapper.xml && \
+	xmlstarlet ed --inplace -u jenkinsUrl -v $EXECUTOR_URL jenkins.model.JenkinsLocationConfiguration.xml && \
+	chown -R cloudmunch:cloudmunch /opt/jenkins
+ENTRYPOINT ["/bin/bash"]
+ADD tomcat.sh /tomcat.sh
+RUN chmod +x /*.sh
+EXPOSE 8080
+CMD ["/tomcat.sh"]

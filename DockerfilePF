@@ -1,0 +1,25 @@
+FROM cloudmunch1/pf-dl:1
+MAINTAINER Cloudmunch
+ARG CM_URL
+ARG EXECUTOR_URL
+ARG CM_DASH_URL
+ARG CM_API_URL
+RUN cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_url=\"$CM_URL\">tmp && \
+	mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
+	cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_dashboard_url=\"$CM_DASH_URL\">tmp && \
+    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
+	cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_api_url=\"$CM_API_URL\">tmp && \
+	mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
+	cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq '.|del(.version)' >tmp && \
+    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
+	cat /var/cloudbox/_MASTER_/data/contexts/executors/CMJENKINS|jq .configuration.base_url=\"$EXECUTOR_URL\">tmp && \
+	mv tmp /var/cloudbox/_MASTER_/data/contexts/executors/CMJENKINS && \
+	yum makecache --enablerepo=cloudmunch-app && \
+	yum install -y cloudmunch-plugin* --enablerepo=cloudmunch-app && \
+	chown -R cloudmunch:cloudmunch /var/cloudbox && \
+	chown -R cloudmunch:cloudmunch /var/www/html && \
+	cd /etc/httpd/conf && \
+	sed -i.bak s@UUUU@"$CM_URL"@g httpd.conf
+EXPOSE 80
+ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
+
