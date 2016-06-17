@@ -1,4 +1,4 @@
-FROM cloudmunch1/ui-dl:5
+FROM cloudmunch1/ui-dl:6
 MAINTAINER Cloudmunch
 ARG CORE_URL
 WORKDIR /var/www/html/cloudbox/dashboard/javascript/app/common
