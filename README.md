@@ -54,9 +54,11 @@ chmod +x /usr/local/bin/docker-compose
 ```
 mkdir cloudmunch
 cd cloudmunch
-git checkout 
+git clone https://github.com/cloudmunch/Install.git 
 
 ```
+> Ensure you have git command line installed on your machine
+
 #### Create volumes to share container data and logs
 
 * Run the following commands core volume
