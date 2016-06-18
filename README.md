@@ -2,12 +2,12 @@
 
 ## Before you begin
 
-Basic understanding of docker, container, images, compose etc. are required in order to complete the below steps.
+Basic understanding of Docker Containers, images, Docker Compose are required to complete the steps below.
 
-## Prerequisites
+## Pre-requisites
 
-#### If installing docker on Windows or Mac 
-* download docker-tools from [here](https://www.docker.com/products/docker-toolbox) and install
+#### If installing Docker on Windows or Mac 
+* Download docker-tools from [here](https://www.docker.com/products/docker-toolbox) and install
 
 #### Create user and group with name cloudmunch and id 580
 ####  Install Docker 1.10
@@ -18,19 +18,19 @@ Basic understanding of docker, container, images, compose etc. are required in o
 curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 && chmod +x docker-1.10.3 && mv docker-1.10.3 /usr/local/bin/docker
 ```
 
-* Add user to docker group
+* Add user to Docker group
 
 ```
 sudo usermod -aG docker <your_username>
 ```
 
-* Then start docker in daemon mode
+* Then start Docker in daemon mode
 
 ```
 sudo /usr/local/bin/docker daemon
 ```
 
-> If you are not installing docker as service then do not close terminal and open new one and continue in that. 
+> If you are not installing Docker as service then do not close terminal and open new one and continue in that. 
 
 #### Install Docker Compose
 
@@ -48,7 +48,7 @@ chmod +x /usr/local/bin/docker-compose
 
 >  Check for the permissions and the paths for the user with which docker / docker-compose is being started.
 
-#### Download docker and docker compose files
+#### Download Docker and Docker compose files
 
 * Run the following command to checkout from this repository
 ```
@@ -110,7 +110,7 @@ chown -R cloudmunch:cloudmunch /var/lib/docker/volumes/85bffb0677236974f93955d8e
 
 * Now update owner for domain and logs volumes also after getting their location.
 
-#### Docker login. 
+#### Docker login
 
 * Docker login will be required to download images. 
 
@@ -123,7 +123,7 @@ Password : your password
 
 #### CloudMunch Services Architecture
 
-CloudMunch installs three distinct services as part of the installation. A UI service, A Core service and an Executor services, and they are structured as below.
+CloudMunch installs three distinct services as part of the installation - UI service, Core service and an Executor service, and they are structured as below.
 
 ![alt text](images/architecture.png "Cloudmunch Services Architecture")
 
@@ -131,7 +131,7 @@ CloudMunch installs three distinct services as part of the installation. A UI se
 #### Update Docker Compose File
 * Values are already set in the docker and docker-compose files but can be updated if different settings are required
 
-> For more info related to docker and docker-compose commands, please go through the docker documentation. 
+> For more info related to docker and docker-compose commands, please go through the Docker documentation. 
 
 ##### **UI** Service (Recommended to edge cache to handle load on this)
 
