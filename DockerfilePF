@@ -1,4 +1,4 @@
-FROM cloudmunch1/pf-dl:6
+FROM cloudmunch1/pf-dl:7
 MAINTAINER Cloudmunch
 ARG CM_URL
 ARG EXECUTOR_URL
@@ -12,8 +12,8 @@ RUN cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cl
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
     cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq '.|del(.version)' >tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
-    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/executor/CMJENKINS|jq .configuration.base_url=\"$EXECUTOR_URL\">tmp && \
-    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/executor/CMJENKINS && \
+    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/executors/CMJENKINS|jq .configuration.base_url=\"$EXECUTOR_URL\">tmp && \
+    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/executors/CMJENKINS && \
     chown -R cloudmunch:cloudmunch /var/cloudbox && \
     chown -R cloudmunch:cloudmunch /var/www/html && \
     cd /etc/httpd/conf && \
