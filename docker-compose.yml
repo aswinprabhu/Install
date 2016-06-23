@@ -19,10 +19,9 @@ services:
       context: .
       dockerfile: DockerfilePF
       args:
-        CM_URL: "http://192.168.1.4"
-        EXECUTOR_URL: "http://192.168.1.4:8080/jenkins"
-        CM_DASH_URL: "http://192.168.1.4/dashboard"
-        CM_API_URL: "http://192.168.1.4:8000/apitest2.php"
+        WEB_URL: "http://192.168.1.4"
+        EXECUTOR_URL: "http://192.168.1.4:8080"
+        CORE_URL: "http://192.168.1.4:8000"
     ports:
       - "8000:80"
     restart: always
