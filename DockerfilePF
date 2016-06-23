@@ -1,4 +1,4 @@
-FROM cloudmunch1/pf-dl:7
+FROM cloudmunch1/pf-dl:8
 MAINTAINER Cloudmunch
 ARG CM_URL
 ARG EXECUTOR_URL
