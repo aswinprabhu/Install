@@ -3,9 +3,9 @@ MAINTAINER Cloudmunch
 ARG CORE_URL
 ARG EXECUTOR_URL
 WORKDIR /opt/jenkins
-RUN xmlstarlet ed --inplace -u cmUrl -v $CORE_URL com.cloudmunch.plugins.CloudmunchWrapper.xml && \
-	xmlstarlet ed --inplace -u jenkinsUrl -v $EXECUTOR_URL jenkins.model.JenkinsLocationConfiguration.xml && \
-	chown -R cloudmunch:cloudmunch /opt/jenkins
+RUN xmlstarlet ed --inplace -u cmUrl -v "$CORE_URL/apitest2.php" com.cloudmunch.plugins.CloudmunchWrapper.xml && \
+    xmlstarlet ed --inplace -u jenkinsUrl -v "$EXECUTOR_URL/jenkins" jenkins.model.JenkinsLocationConfiguration.xml && \
+    chown -R cloudmunch:cloudmunch /opt/jenkins
 ENTRYPOINT ["/bin/bash"]
 ADD tomcat.sh /tomcat.sh
 RUN chmod +x /*.sh
