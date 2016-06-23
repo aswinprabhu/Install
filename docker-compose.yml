@@ -37,8 +37,8 @@ services:
       context: .
       dockerfile: DockerfileHPI
       args:
-        EXECUTOR_URL: "http://192.168.1.4:8080/jenkins"
-        CORE_URL: "http://192.168.1.4:8000/apitest2.php"
+        EXECUTOR_URL: "http://192.168.1.4:8080"
+        CORE_URL: "http://192.168.1.4:8000"
     ports:
       - "8080:8080"
     restart: always
