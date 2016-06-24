@@ -18,7 +18,7 @@ RUN cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cl
     chown -R cloudmunch:cloudmunch /var/cloudbox && \
     chown -R cloudmunch:cloudmunch /var/www/html && \
     cd /etc/httpd/conf && \
-    sed -i.bak s@UUUU@"$CM_URL"@g httpd.conf
+    sed -i.bak s@UUUU@"$WEB_URL"@g httpd.conf
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
 
