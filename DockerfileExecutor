@@ -1,10 +1,11 @@
-FROM cloudmunch1/hpi-dl:latest
+FROM cloudmunch1/hpi-dl:15
 MAINTAINER Cloudmunch
 ARG CORE_URL
 ARG EXECUTOR_URL
 WORKDIR /opt/jenkins
 RUN xmlstarlet ed --inplace -u cmUrl -v "$CORE_URL/apitest2.php" com.cloudmunch.plugins.CloudmunchWrapper.xml && \
-    xmlstarlet ed --inplace -u jenkinsUrl -v "$EXECUTOR_URL/jenkins" jenkins.model.JenkinsLocationConfiguration.xml && \
+    #xmlstarlet ed --inplace -u jenkinsUrl -v "$EXECUTOR_URL/jenkins" jenkins.model.JenkinsLocationConfiguration.xml && \
+    yum install -y cloudmunch-plugin* --enablerepo=cloudmunch-app && \
     chown -R cloudmunch:cloudmunch /opt/jenkins
 ENTRYPOINT ["/bin/bash"]
 ADD tomcat.sh /tomcat.sh
