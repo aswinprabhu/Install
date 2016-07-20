@@ -59,56 +59,21 @@ git clone https://github.com/cloudmunch/Install.git
 ```
 > Ensure you have git command line installed on your machine
 
-#### Create volumes to share container data and logs
+#### Create volumes to share container data
 
-* Run the following commands core volume
+* Create 2 folders for volume mounting at any convenient location. In further steps we will assume that we have two folders already created at below locations :
 
-> Platform runs the core api services 
+> /platform : Platform runs the core api services 
 
-```
-docker volume create --name platform
-```
-* Run the following commands domain volume
+> /domain : Domain holds team information 
 
-> Domain holds team information 
+
+#### Update owner of mount points (above folders) to cloudmunch:cloudmunch (created in step 1)
 
 ```
-docker volume create --name domain
-```
-* Run the following commands logs volume
-
-> Logs volume is used for all logs data
+chown -R cloudmunch:cloudmunch /domain/ /platform/ 
 
 ```
-docker volume create --name logs
-```
-
-#### Update owner of mount points to cloudmunch:cloudmunch (created in step 1)
-
-* Run the following command to get the location of this volume create on host. 
-
-```
-$ docker volume inspect platform
-[
-  {
-      "Name": "85bffb0677236974f93955d8ecc4df55ef5070117b0e53333cc1b443777be24d",
-      "Driver": "local",
-      "Mountpoint": "/var/lib/docker/volumes/85bffb0677236974f93955d8ecc4df55ef5070117b0e53333cc1b443777be24d/_data",
-      "Status": null
-  }
-]
-```
-
-* Update the owner of location retrieved in Mountpoint . If using boot2docker, then ssh first to vm then update owner.
-
-```
-chown -R cloudmunch:cloudmunch /var/lib/docker/volumes/85bffb0677236974f93955d8ecc4df55ef5070117b0e53333cc1b443777be24d/ 
-
-# and this is only as example. Here, get the actual path
-
-```
-
-* Now update owner for domain and logs volumes also after getting their location.
 
 #### Docker login
 
