@@ -26,15 +26,14 @@ services:
       - "8000:80"
     restart: always
     volumes:
-      - platform:/var/cloudbox/platform
-      - domain:/var/cloudbox/domain
-      - logs:/var/log
+      - /platform:/var/cloudbox/platform
+      - /domain:/var/cloudbox/domain
     links:
       - executor
   executor:
     build:
       context: .
-      dockerfile: DockerfileHPI
+      dockerfile: DockerfileExecutor
       args:
         EXECUTOR_URL: "http://192.168.1.4:8080"
         CORE_URL: "http://192.168.1.4:8000"
@@ -42,12 +41,4 @@ services:
       - "8080:8080"
     restart: always
     volumes:
-      - domain:/var/cloudbox/domain
-      - logs:/var/log
-volumes:
-  platform:
-    external: true
-  domain:
-    external: true
-  logs:
-    external: true
+      - /domain:/var/cloudbox/domain
