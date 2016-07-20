@@ -1,4 +1,4 @@
-FROM cloudmunch1/hpi-dl:1
+FROM cloudmunch1/hpi-dl:latest
 MAINTAINER Cloudmunch
 ARG CORE_URL
 ARG EXECUTOR_URL
