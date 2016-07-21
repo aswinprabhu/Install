@@ -5,7 +5,7 @@ ARG EXECUTOR_URL
 WORKDIR /opt/jenkins
 RUN xmlstarlet ed --inplace -u cmUrl -v "$CORE_URL/apitest2.php" com.cloudmunch.plugins.CloudmunchWrapper.xml && \
     #xmlstarlet ed --inplace -u jenkinsUrl -v "$EXECUTOR_URL/jenkins" jenkins.model.JenkinsLocationConfiguration.xml && \
-    yum install -y cloudmunch-plugin* --enablerepo=cloudmunch-app && \
+    cd /var/cloudbox/_MASTER_/data/contexts;7za x plugins.7z;rm plugins.7z;cd / && \
     chown -R cloudmunch:cloudmunch /opt/jenkins
 ENTRYPOINT ["/bin/bash"]
 ADD tomcat.sh /tomcat.sh
