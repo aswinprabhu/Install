@@ -1,7 +1,7 @@
 FROM cloudmunch1/ui-dl:latest
 MAINTAINER Cloudmunch
 ARG CORE_URL
-WORKDIR /var/www/html/cloudbox/dashboard/javascript/app/common
+WORKDIR /var/www/html/cloudbox/dashboard/javascript/app/components/config
 RUN echo {\"SERVER\":\"$CORE_URL\"} > serverConfig.json
 RUN ["chown", "-R", "cloudmunch:cloudmunch", "/var/www/html/"]
 EXPOSE 80
