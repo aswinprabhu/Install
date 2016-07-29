@@ -148,5 +148,13 @@ docker-compose restart
 docker-compose restart <service _name>
 ```
 
+#### Additional Notes
+* For cleaning up the install and removing everything, including data folders 
+```
+docker-compose down
+```
+
+To remove data, when using docker-machine as the host, ssh into the docker machine and remove folders domain and platform from the root
+
 > For advance usage, please go through docker-compose commands documentation.
 
