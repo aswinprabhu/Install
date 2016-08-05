@@ -89,7 +89,9 @@ Password : your password
 ```
 
 ### Docker For Mac (Recommended)
-
+* Search for VirtualBox uninstall and run the uninstall tool
+* Uninstall boot2docker
+* Uninstall docker machine if you have it running
 * Download docker for Mac or Windows from [here](http://www.docker.com/products/overview) and install Docker 1.12
 * Assuming your parent directory is "docker"
    * create directories "platform" and "domain"
