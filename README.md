@@ -7,7 +7,7 @@ Basic understanding of Docker Containers, images, Docker Compose are required to
 ## Pre-requisites
 
 #### If installing Docker on Windows or Mac 
-* Download docker-tools from [here](https://www.docker.com/products/docker-toolbox) and install
+* Download docker for Mac or Windows from [here](http://www.docker.com/products/overview) and install Docker 1.12
 
 #### Create user and group with name cloudmunch and id 580
 ####  Install Docker 1.10
