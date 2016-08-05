@@ -94,7 +94,8 @@ CloudMunch installs three distinct services as part of the installation - UI ser
 
 
 #### Update Docker Compose File
-* Values are already set in the docker and docker-compose files but can be updated if different settings are required
+* Replace the occurances of 127.0.0.1 to your IP addresses
+* Replace the actual path for your volume on the left side of volume section
 
 > For more info related to docker and docker-compose commands, please go through the Docker documentation. 
 
