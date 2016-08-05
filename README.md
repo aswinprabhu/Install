@@ -6,7 +6,7 @@ Basic understanding of Docker Containers, images, Docker Compose are required to
 
 # Installation
 
-##Docker on Mac
+##Docker Tools
 
 * Download docker-tools from [here](https://www.docker.com/products/docker-toolbox) and install
 
@@ -87,7 +87,7 @@ Email : your e-mail id
 Password : your password
 ```
 
-### Docker For Mac
+### Docker For Mac (Recommended)
 
 * Download docker for Mac or Windows from [here](http://www.docker.com/products/overview) and install Docker 1.12
 * Assuming your parent directory is "docker"
