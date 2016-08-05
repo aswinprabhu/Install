@@ -4,9 +4,10 @@
 
 Basic understanding of Docker Containers, images, Docker Compose are required to complete the steps below.
 
-## Pre-requisites
+# Installation
 
-#### If installing Docker on Windows or Mac 
+##Docker on Mac
+
 * Download docker-tools from [here](https://www.docker.com/products/docker-toolbox) and install
 
 #### Create user and group with name cloudmunch and id 580
@@ -86,7 +87,10 @@ Email : your e-mail id
 Password : your password
 ```
 
-#### CloudMunch Services Architecture
+### Docker For Mac
+Download https://download.docker.com/mac/stable/Docker.dmg
+
+# CloudMunch Services Architecture
 
 CloudMunch installs three distinct services as part of the installation - UI service, Core service and an Executor service, and they are structured as below.
 
