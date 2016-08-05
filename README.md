@@ -6,9 +6,10 @@ Basic understanding of Docker Containers, images, Docker Compose are required to
 
 # Installation
 
-##Docker Tools
+#### Docker Tools or Native Docker
 
 * Download docker-tools from [here](https://www.docker.com/products/docker-toolbox) and install
+* Or, download Native Docker from [here](https://www.docker.com/products/overview) and install
 
 #### Create user and group with name cloudmunch and id 580
 ####  Install Docker 1.10
