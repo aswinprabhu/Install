@@ -89,8 +89,19 @@ Password : your password
 ```
 
 ### Docker For Mac (Recommended)
-
+* Search for VirtualBox uninstall and run the uninstall tool
+* Uninstall boot2docker
+* Uninstall docker machine if you have it running
 * Download docker for Mac or Windows from [here](http://www.docker.com/products/overview) and install Docker 1.12
+* Assuming your parent directory is "docker"
+   * create directories "platform" and "domain"
+   * create another directory and clone this repo into it   
+* Edit the configuration file `docker-compose.yml`
+   * replace all occurrences of `127.0.0.1` with your IP
+   * Under `volumes` correct occurrences of the paths /platform and /domain to reflect their actual location of the directories you created above
+* Run the compose file ( which will do both: install the images and bring up the containers )
+   `docker-compose up -d`
+* Type your IP address in the browser to start the application and setup CloudMunch
 
 # CloudMunch Services Architecture
 
