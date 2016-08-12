@@ -4,15 +4,19 @@ ARG WEB_URL
 ARG EXECUTOR_URL
 ARG CORE_URL
 ADD pfinstall.sh /pfinstall.sh
-RUN cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_url=\"$WEB_URL\">tmp && \
+RUN RUN cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_url=\"$WEB_URL\">tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
     cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_dashboard_url=\"$WEB_URL/dashboard\">tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
+    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_api_url=\"$CORE_URL/api/\">tmp && \
+    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
     cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .urls.cloudmunch_dashboard_url=\"$WEB_URL/dashboard\">tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
-    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .urls.login_url=\"$WEB_URL/login\">tmp && \
+    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .urls.cloudmunch_api_url=\"$CORE_URL/api/\">tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
-    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cloudmunch_api_url=\"$CORE_URL/api/\">tmp && \
+    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .urls.cloudmunch_url=\"$WEB_URL\">tmp && \
+    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
+    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .urls.login_url=\"$WEB_URL/login\">tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
     cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq '.|del(.version)' >tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch && \
