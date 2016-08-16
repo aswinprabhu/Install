@@ -1,4 +1,4 @@
-FROM cloudmunch1/hpi-dlo:latest
+FROM cmrelease/hpi-dlo:latest
 MAINTAINER Cloudmunch
 ARG CORE_URL
 ARG EXECUTOR_URL
