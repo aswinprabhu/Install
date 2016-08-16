@@ -172,6 +172,10 @@ Run below commands to upgrade services.
 ```
 cd <InstallFolder>
 ```
+To get a list of services 
+```
+docker-compose config --services
+```
 ```
 docker-compose stop <serviceName>
 ```
