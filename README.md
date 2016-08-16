@@ -168,7 +168,7 @@ docker-compose restart <service _name>
 
 ### Upgrading Services
 
-Run below to upgrade services.
+Run below commands to upgrade services.
 ```
 cd <InstallFolder>
 ```
@@ -184,7 +184,7 @@ docker-compose build --force-rm --pull --no-cache <serviceName>
 ```
 docker-compose up -d <serviceName>
 ```
-* If serviceName is empty, all services will be stopped, removed and build again.
+* If **serviceName** is empty, all services will be stopped, removed and build again.
 
 
 #### Additional Notes
