@@ -167,15 +167,17 @@ docker-compose restart <service _name>
 ```
 
 ### Upgrading Services
-
-Run below commands to upgrade services.
+Steps to follow upgrade a specific service or all services.
 ```
 cd <InstallFolder>
 ```
+
 To get a list of services 
 ```
 docker-compose config --services
 ```
+
+Run the below commands to upgrade service(s).
 ```
 docker-compose stop <serviceName>
 ```
