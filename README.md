@@ -27,10 +27,6 @@ sudo usermod -aG docker <your_username>
 ```
 sudo groupadd docker
 ```
-* If docker group does not exist, create one and then re-run above command
-```
-sudo groupadd docker
-```
 * Logout and login again
 * Start Docker as service
 ```
@@ -49,6 +45,10 @@ curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 && chmod +
 
 ```
 sudo usermod -aG docker <your_username>
+```
+* If docker group does not exist, create one and then re-run above command
+```
+sudo groupadd docker
 ```
 * Logout and login again
 * Then start Docker in daemon mode
