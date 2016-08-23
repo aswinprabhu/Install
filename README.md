@@ -12,7 +12,32 @@ Basic understanding of Docker Containers, images, Docker Compose are required to
 * Or, download Native Docker from [here](https://www.docker.com/products/overview) and install
 
 #### Create user and group with name cloudmunch and id 580
-####  Install Docker 1.10 (if not using Docker Toolbox or Native Docker)
+
+####  Install Docker 1.10 (or greater version) as service
+
+* Run the following command to install Docker 
+```
+sudo yum install docker
+```
+* Add user to Docker group
+```
+sudo usermod -aG docker <your_username>
+```
+* If docker group does not exist, create one and then re-run above command
+```
+sudo groupadd docker
+```
+* If docker group does not exist, create one and then re-run above command
+```
+sudo groupadd docker
+```
+* Logout and login again
+* Start Docker as service
+```
+sudo service docker start
+```
+
+####  Install Docker 1.10 (if yum or deb package is not available for version > 1.10)
 
 * Run the following command as root
 
@@ -25,7 +50,7 @@ curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 && chmod +
 ```
 sudo usermod -aG docker <your_username>
 ```
-
+* Logout and login again
 * Then start Docker in daemon mode
 
 ```
