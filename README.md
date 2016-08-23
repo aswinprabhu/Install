@@ -4,9 +4,9 @@
 
 Basic understanding of Docker Containers, images, Docker Compose are required to complete the steps below.
 
-# Installation
+### Installation
 
-### Docker For Mac (Recommended)
+#### Docker For Mac (Recommended)
 * Search for VirtualBox uninstall and run the uninstall tool
 * Uninstall boot2docker
 * Uninstall docker machine if you have it running
@@ -83,6 +83,7 @@ chmod +x /usr/local/bin/docker-compose
 
 >  Check for the permissions and the paths for the user with which docker / docker-compose is being started.
 
+### SETUP
 #### Create user and group with name cloudmunch and id 580
 
 #### Download Docker and Docker compose files
