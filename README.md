@@ -23,7 +23,7 @@ sudo yum install docker
 ```
 sudo usermod -aG docker <your_username>
 ```
-* If docker group does not exist, create one and then re-run above command
+* If docker group does not exist, create one using below command and then re-run above command
 ```
 sudo groupadd docker
 ```
@@ -46,7 +46,7 @@ curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 && chmod +
 ```
 sudo usermod -aG docker <your_username>
 ```
-* If docker group does not exist, create one and then re-run above command
+* If docker group does not exist, create one using below command and then re-run above command
 ```
 sudo groupadd docker
 ```
