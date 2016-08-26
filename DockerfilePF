@@ -1,4 +1,4 @@
-FROM cmrelease/pf-dl:latest
+FROM cmrelease/cloudmunchops-core-dl:test
 MAINTAINER Cloudmunch
 ARG WEB_URL
 ARG EXECUTOR_URL
