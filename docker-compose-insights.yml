@@ -1,0 +1,47 @@
+version: '2'
+services:
+  ui:
+    build:
+      context: .
+      dockerfile: DockerfileUIInsights
+      args:
+        CORE_URL: "http://dockerlocalsetup.cloudmunch.com:8000"
+    ports:
+      - "80:80"
+    restart: always
+    privileged: true
+    depends_on:
+      - core
+      - executor
+    links:
+      - core
+  core:
+    build:
+      context: .
+      dockerfile: DockerfilePF
+      args:
+        WEB_URL: "http://dockerlocalsetup.cloudmunch.com"
+        EXECUTOR_URL: "http://dockerlocalsetup.cloudmunch.com:8080"
+        CORE_URL: "http://dockerlocalsetup.cloudmunch.com:8000"
+    ports:
+      - "8000:80"
+    restart: always
+    privileged: true
+    volumes:
+      - /platform:/var/cloudbox/platform
+      - /domain:/var/cloudbox/domain
+    links:
+      - executor
+  executor:
+    build:
+      context: .
+      dockerfile: DockerfileExecutor
+      args:
+        EXECUTOR_URL: "http://dockerlocalsetup.cloudmunch.com:8080"
+        CORE_URL: "http://dockerlocalsetup.cloudmunch.com:8000"
+    ports:
+      - "8080:8080"
+    restart: always
+    privileged: true
+    volumes:
+      - /domain:/var/cloudbox/domain
