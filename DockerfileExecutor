@@ -1,4 +1,4 @@
-FROM cmrelease/hpi-dl:latest
+FROM cmrelease/cloudmunchops-executor-dl:test
 MAINTAINER Cloudmunch
 ARG CORE_URL
 ARG EXECUTOR_URL
