@@ -1,0 +1,8 @@
+FROM cmrelease/ui-dl-delivery:latest
+MAINTAINER Cloudmunch
+ARG CORE_URL
+WORKDIR /var/www/html/cloudbox/dashboard/javascript/app/components/config
+RUN sed -i s#}#,\"SERVER\":\"$CORE_URL\"}# serverConfig.json;cd /
+RUN ["chown", "-R", "cloudmunch:cloudmunch", "/var/www/html/"]
+EXPOSE 80
+ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
