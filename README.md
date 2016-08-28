@@ -1,3 +1,21 @@
+CloudMunch platform is delivered as a collection of Docker services. CloudMunch can be setup on any machine that is a Docker Host. Please note, this setup is evaluation purposes only. Instructions for installing CloudMunch Enterprise will be provided by your Account Manager. 
+
+#Requirements
+
+#Here are the requirements for the Docker host machine  
+
+1. OS : RedHat 7 or Debian 7 installed
+
+2. Disk space : ~200 GB
+
+3. RAM : Minimum of 8 GB
+
+4. CPU : minimum Dual core
+
+5. Docker installed
+
+6. Internet access required (please ensure that there is connectivity to GitHub and Docker Hub)
+
 # Download and Install CloudMunch services
 
 ## Before you begin
