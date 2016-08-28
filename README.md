@@ -1,6 +1,6 @@
 CloudMunch platform is delivered as a collection of Docker services. CloudMunch can be setup on any machine that is a Docker Host. Please note, this setup is evaluation purposes only. Instructions for installing CloudMunch Enterprise will be provided by your Account Manager.
 
-#Here are the requirements for the Docker host machine  
+#Here are the infra requirements for the Docker host machine to download CloudMunch  
 
 1. OS : RedHat 7 or Debian 7 installed
 
