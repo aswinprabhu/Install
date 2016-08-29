@@ -10,11 +10,6 @@ services:
       - "80:80"
     restart: always
     privileged: true
-    depends_on:
-      - core
-      - executor
-    links:
-      - core
   core:
     build:
       context: .
@@ -30,8 +25,6 @@ services:
     volumes:
       - /platform:/var/cloudbox/platform
       - /domain:/var/cloudbox/domain
-    links:
-      - executor
   executor:
     build:
       context: .
