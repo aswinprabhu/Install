@@ -100,6 +100,10 @@ chmod +x /usr/local/bin/docker-compose
 >  Check for the permissions and the paths for the user with which docker / docker-compose is being started.
 
 ### SETUP
+```
+**Note about firewall**
+CloudMunch Docker containers communicate with each other through ports on the Docker Host. Please ensure that there are firewall exceptions on the Docker Host for the ports configured for the CloudMunch containers defined in the docker-compose file.   
+```
 #### Create user and group with name cloudmunch and id 580
 
 #### Download Docker and Docker compose files
