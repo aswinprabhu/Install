@@ -1,4 +1,4 @@
-FROM cmrelease/ui-dl:latest
+FROM cmrelease/cloudmunchops-ui-dl:latest
 MAINTAINER Cloudmunch
 ARG CORE_URL
 WORKDIR /var/www/html/cloudbox/dashboard/javascript/app/components/config
