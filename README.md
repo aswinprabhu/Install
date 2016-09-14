@@ -178,7 +178,7 @@ CloudMunch installs three distinct services as part of the installation - UI ser
 |EXECUTOR_URL|URL of executor service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed>```|
 |CORE_URL|  URL of core api ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which core service is exposed>```|
 |ports|  Port on which port 80 of container is mapped to host port. <host_port>:<container_port>|
-|volumes|  Volumes to be mapped inside container|
+|volumes|  Volumes to be mapped inside container. <host_volume>:<container_volume> Host volume is what we have created in above steps and no need to change container volume.|
 
 ##### **EXECUTOR** Service (Recommended to scale as execution load increases)
 
@@ -188,6 +188,7 @@ CloudMunch installs three distinct services as part of the installation - UI ser
 |EXECUTOR_URL|  URL of executor service ``` Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which executor service is exposed> ```|
 |CORE_URL|  URL of core service ```Ex : If running on ip 192.168.1.4 then set it as 192.168.1.4:<port number on which core service is exposed>```|
 |ports|  Port on which port 8080 of container is mapped to host port ``` <host_port>:<container_port>```|
+|volumes|  Volumes to be mapped inside container. <host_volume>:<container_volume> Host volume is what we have created in above steps and no need to change container volume.|
 
 #### Commands for starting / stopping container services
 
