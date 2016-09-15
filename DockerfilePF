@@ -26,6 +26,8 @@ RUN cat /var/cloudbox/platform/_CUSTOM_/data/contexts/settings/cloudmunch|jq .cl
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/executors/cmexecutor && \
     cat /var/cloudbox/platform/_CUSTOM_/data/contexts/interfaces/cmjenkins|jq .configuration.base_url=\"$EXECUTOR_URL/executorservice/api\">tmp && \
     mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/interfaces/cmjenkins && \
+    cat /var/cloudbox/platform/_CUSTOM_/data/contexts/executors/cmexecutor|jq .interface=\"cmexecutor\">tmp && \
+    mv tmp /var/cloudbox/platform/_CUSTOM_/data/contexts/executors/cmexecutor && \
     mkdir /customData;mv /var/cloudbox/platform/_CUSTOM_ /customData && \
     chown -R cloudmunch:cloudmunch /var/cloudbox && \
     chown -R cloudmunch:cloudmunch /var/www/html && \
