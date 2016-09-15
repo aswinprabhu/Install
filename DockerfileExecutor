@@ -1,11 +1,10 @@
-FROM cmrelease/cloudmunchops-executor-dl:latest
+FROM cloudmunch1/cloudmunchops-executorservice-dl:latest
 MAINTAINER Cloudmunch
 ARG CORE_URL
-ARG EXECUTOR_URL
 WORKDIR /opt/jenkins
-RUN xmlstarlet ed --inplace -u cmUrl -v "$CORE_URL/api/" com.cloudmunch.plugins.CloudmunchWrapper.xml && \
-    #xmlstarlet ed --inplace -u jenkinsUrl -v "$EXECUTOR_URL/jenkins" jenkins.model.JenkinsLocationConfiguration.xml && \
-    cd /var/cloudbox/_MASTER_/data/contexts;7za x plugins.7z;rm plugins.7z;cd / && \
+RUN echo {\"SERVER\":\"$CORE_URL\"} > /var/cloudbox/_MASTER_/data/contexts/executor/serverconfig.json && \
+	cd /var/cloudbox/_MASTER_/data/contexts;7za x plugins.7z;rm plugins.7z;cd / && \    
+	rm -rf /cloudmunch-executor && \
     chown -R cloudmunch:cloudmunch /opt/jenkins
 ENTRYPOINT ["/bin/bash"]
 ADD tomcat.sh /tomcat.sh
